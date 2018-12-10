@@ -1,0 +1,7 @@
+.page-container {
+    display: flex;
+}
+
+.datatable-container, .chart-container {
+    width: 50%
+}
