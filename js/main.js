@@ -31,6 +31,14 @@ $(document).ready(function() {
         });
 
         $('#meter-table tbody').on( 'click', 'tr', function (event) {
+            let table = $('#meter-table').DataTable();
+            if ( $(this).hasClass('selected') ) {
+                $(this).removeClass('selected');
+            }
+            else {
+                table.$('tr.selected').removeClass('selected');
+                $(this).addClass('selected');
+            }
             let meterIdSelected = event.target.innerHTML;
             let meterData = allData.filter((line)=> line.Meter_ID === meterIdSelected);
             createMeterChart(meterData);
